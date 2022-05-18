@@ -1,0 +1,36 @@
+  <div class="login-box">
+    <h2>Book Rent</h2>
+    <form #BookInfo="ngForm"  (ngSubmit)="onSubmit(BookInfo.value)" >
+      <div class="user-box">
+        <input type="text" name="BookName" placeholder="Book Name" required="" ngModel>
+      </div>
+      <div class="user-box">
+        <input type="datetime-local" id="From" name="From" ngModel >
+      </div>
+      <div class="user-box">
+        <input type="datetime-local" id="To" name="To" ngModel>
+      </div>
+      <div class="user-box">
+
+        <select name="CountryId" ngModel>
+          <option selected value="1">Dubai</option>
+          <option value="2">Turkey</option>
+        </select>
+      </div>
+      <a href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <button style="border: radius 2px;background-color: aqua; color: black;box-shadow: 0px 0px 6px 4px aqua;border-style: none; " type="submit"> Submit </button>
+      </a>
+    </form>
+
+
+    <div class="res">
+      <div  style="background-color: white;" *ngFor="let item of resultPenalty |keyvalue">
+        Buissness Days: <b>{{item.key}}</b> and Total Price:<b>{{item.value}}</b>
+    </div>  
+    </div>
+
+  </div>
